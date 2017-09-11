@@ -1,3 +1,6 @@
+"""Launch primary shaka_show app as main"""
+from __future__ import absolute_import
 
 if __name__ == '__main__':
-    print("Hello World!")
+    import shaka_show_app as app
+    app.main()
