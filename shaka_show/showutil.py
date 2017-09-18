@@ -1,7 +1,7 @@
 import argparse
 
 def parseArgs ():
-	
+
 	"""
 	Function takes in arguments from a command line.
 	If the argument is preceded by '-p' or '--port', the value for the source file's port number is changed from '8888' to the argument value.
@@ -28,7 +28,7 @@ def parseArgs ():
 		sourceList.append(line)
 
 	# Create a dictionary containing the 'port number,' the 'file name,' and the 'source code' of the source file
-	newDict = {'PORT': args.port, 'FileName': args.file, 'Source': sourceList }
+	newDict = {'port': args.port, 'filename': args.file, 'source': sourceList }
 
 	#Close the source file
 	source.close()
