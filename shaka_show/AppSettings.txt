@@ -1,0 +1,89 @@
+# Basic Jupyter Settings
+log_function:
+    - Called at end of every request to log result.
+    - Default writes to "logging" mod's root logger
+
+static_handler_class / static_handler_args:
+    - May be set to use a different handler for static files instead of default
+    - ..._args should be a dict of keyword args to be passed to handler's init method
+
+static_url_prefix:
+    - Url prefix for static files, defaults to /static/
+
+
+
+# General Settings
+autoreload: if True, server process will restart when any source files change
+
+compress_response:
+    - If True, responses in textual formats will be compressed automatically
+    - gzip = deprecated alias for compress_response
+
+default_handler_class / default_handler_args:
+    - Handler used if no other match is found
+    - Used to implement custom 404 pages
+
+serve_traceback:
+    - if true, default error page will include traceback of error
+
+ui_modules / ui_methods:
+    - May be set to mapping of "UIModule" or UI methods to be made available to templates.
+    - May be used to set to mod, dict, or list of mods and/or dicts.
+
+websocket_ping_interval:
+    - If set to a number, all websockets will be pinged every n seconds
+    - Can help keep connection alive through certain proxy servers which close idle connections
+    - Can detect if websocket has failed without being properly closed
+
+websocket_ping_timeout:
+    - If ping interval is set & server doesn't receive 'pong' in many seconds, it will close websocket.
+    - Default is 3x ping interval, w/ min. of 30 sec.
+    - Ignored if ping interval not set.
+
+
+
+# Authentication & Security Settings:
+cookie_secret:
+    - Used by "RequestHandler.get_secure_cookie" & "set-secure_cookie" to sign cookies.
+
+key_version:
+    - Used by requestHandler set_secure_cookie to sign cookies w/ specific key when cookie_secret is a key dictionary.
+
+xsrf_cookies:
+    - If true, cross-site request forgery protection will be enabled.
+
+
+
+# Template Settings:
+autoescape:
+    - Controls automatic escaping for templates.
+    - May be set to None to disable escaping
+    - Default: "xhtml_escape"
+    - Can be changed on per-template basis w/ {% autoescape %} directive
+
+template_whitespace:
+    - Controls handling of whitespace in templates
+
+
+
+# Settings Not Included
+General Settings:
+    - debug:
+        - if debug = True:
+            - autoreload = True
+            - compiled_template_cache = False
+            - static_hash_cache = False
+            - serve_traceback = True
+
+Automatic/Security Settings:
+    - login_url
+    - xsrf_cookie_version
+    - xsrf_cookie_kwargs
+    - twitter_consumer_key, twitter_consumer_secret, ... , facebook_secret
+
+Template Settings:
+    - compiled_template_cache
+    - template_loader
+
+Static File Settings:
+    - static_hash_cache
