@@ -47,7 +47,13 @@ class ShakaShowWebApp(tornado.web.Application):
     def init_settings(self):
         settings = dict(
             template_path = DEFAULT_TEMPLATE_FILES_PATH,
-            static_path = DEFAULT_STATIC_FILES_PATH
+            static_path = DEFAULT_STATIC_FILES_PATH,
+            autoreload = True,
+            serve_traceback = True,
+            compress_response = True,
+            websocket_ping_interval = 10,
+            websocket_ping_timeout = 60,
+            xsrf_cookies = True
         )
         return settings
 
