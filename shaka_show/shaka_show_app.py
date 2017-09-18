@@ -20,6 +20,7 @@ import tornado.options
 import tornado.web
 
 # Shaka-Show imports
+from showutil import load_handlers, parse_args
 
 from __init__ import (
     DEFAULT_STATIC_FILES_PATH,
@@ -27,18 +28,6 @@ from __init__ import (
 )
 
 
-#----------------------------------------------------------------
-# Helper functions
-#----------------------------------------------------------------
-
-def load_handlers(name):
-    """Return a tuple containing URL and the URL's handler.
-    Each handler should be contained in a file called handles.py.
-    These modules contain each handler and are retrieved with
-    "default_handlers".
-    """
-    module = importlib.import_module(name)
-    return module.default_handlers
 
 #----------------------------------------------------------------
 # Main web server class
