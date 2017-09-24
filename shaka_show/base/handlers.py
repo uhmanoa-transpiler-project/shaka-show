@@ -24,7 +24,7 @@ class MainHandler(web.RequestHandler):
         )
         panelargs['codetracker.html'] = codetracker_args
 
-        self.render('page.html', panelargs = panelargs)
+        self.render('page.html', panels = panels, panelargs = panelargs)
 
 
 
