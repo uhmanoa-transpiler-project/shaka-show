@@ -6,6 +6,15 @@ This document is used to retain text relating to every task that is completed as
 
 ## Tasks
 
+### Render filename and Sourcecode of file to codetracker.html
+
+Date: 9/24/2017
+Expected DD: 2
+Actual DD: 2
+
+We figured out how to use Tornado templates. It took a while, because it is not as documented or as clean or trustworthy as Jinja2. We figured it out eventually, learning that to include a html file, we cannot use a python string. The only way to pass in the name of the file we want to include is through the "module" template function.
+I wrote the handler that sets up a list of the panels we want to include, and then set up the panelargs dict that we use to pass information for each panel into its template renderer.
+
 ### Add JS libraries to static/dep for offline use
 
 Date: 9/24/2017
