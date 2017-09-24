@@ -45,9 +45,20 @@ class ShakaShowWebApp(tornado.web.Application):
 
 
     def init_settings(self):
+
+        # Get arguments from cmdline
+        cmdargs = parse_args()
+
+
         settings = dict(
+            # Template settings
             template_path = DEFAULT_TEMPLATE_FILES_PATH,
             static_path = DEFAULT_STATIC_FILES_PATH,
+
+            #
+            cmdargs = cmdargs,
+
+            # Tornado settings
             autoreload = True,
             serve_traceback = True,
             compress_response = True,
