@@ -89,6 +89,9 @@ class ShakaShowWebApp(tornado.web.Application):
 #----------------------------------------------------------------
 def main():
     print("shaka_show_app.py", "Hello World!")
+
+    # TODO: Add webbrowser and URL information to WebApp.
+    webbrowser.open("http://localhost:8888")
     httpServer = tornado.httpserver.HTTPServer(ShakaShowWebApp())
     httpServer.listen(8888)
     tornado.ioloop.IOLoop.current().start()
