@@ -1,18 +1,22 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+
+    <!-- Library / Framework CSS -->
+
+    <!-- Code Mirror -->
+    <script src="{{ static_url("dep/js/codemirror.js") }}"></script>
+    <link rel="stylesheet" href="{{ static_url("dep/css/codemirror.css") }}">
+    <script src="{{ static_url("dep/mode/scheme.js") }}"></script>
+
     <title>Shaka homepage</title>
 <head>
-
-
 <body>
     {% for panel in panels %}
         {% module Template(panel, **panelargs[panel]) %}
     {% end %}
 
-    <div>
-        <p>
-            More text
-        </p>
-    </div>
+    <!-- Library / Framework JS -->
 </body>
 </html>
