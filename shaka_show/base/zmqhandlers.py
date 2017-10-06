@@ -8,7 +8,7 @@ from zmq.eventloop import ioloop, zmqstream
 ioloop.install()
 
 
-List = []
+SocketList = []
 
 
 def getcommand(msg):
@@ -19,7 +19,7 @@ def getcommand(msg):
         ioloop.IOLoop.instance().stop()
 
     else:
-        List.append(command)
+        SocketList.append(command)
 
 
 def zmq_sub(port_sub = "8080"):
@@ -32,4 +32,4 @@ def zmq_sub(port_sub = "8080"):
     print("Connected to publisher with port %s" % port_sub)
     ioloop.IOLoop.instance().start()
     print("Worker has stopped processing messages.")
-    return List
+    return SocketList
