@@ -21,4 +21,3 @@ while (messagedata != "Quit"):
     messagedata = input("Command: ")
     print("%s" % (messagedata))
     socket.send_string("%s" % (messagedata))
-    time.sleep(1)
