@@ -215,3 +215,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# Semantic UI
+dist/
