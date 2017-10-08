@@ -14,16 +14,18 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack shaka_show/static/app.js shaka_show/static/dist/bundle.js -p"
+    "webpack": "webpack"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
     "webpack": "^3.6.0"
   },
   "dependencies": {
     "codemirror": "^5.30.0",
     "jquery": "^3.2.1",
     "less": "^2.7.2",
-    "semantic-ui": "^2.2.13"
+    "semantic-ui": "^2.2.13",
+    "underscore": "^1.8.3"
   }
 }
