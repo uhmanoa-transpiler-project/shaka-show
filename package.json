@@ -1,0 +1,19 @@
+{
+  "name": "shaka-show-deps",
+  "author": "Shaka-Show Developers",
+  "version": "1.0.0",
+  "description": "Shaka-Show npm dependencies",
+  "homepage": "https://github.com/uhmanoa-transpiler-project/shaka-show#readme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uhmanoa-transpiler-project/shaka-show/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uhmanoa-transpiler-project/shaka-show.git"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
