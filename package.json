@@ -12,8 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/uhmanoa-transpiler-project/shaka-show.git"
   },
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
