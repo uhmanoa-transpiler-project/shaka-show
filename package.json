@@ -13,7 +13,8 @@
     "url": "git+https://github.com/uhmanoa-transpiler-project/shaka-show.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack shaka_show/static/app.js shaka_show/static/dist/bundle.js -p"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
