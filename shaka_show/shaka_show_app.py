@@ -27,8 +27,6 @@ from __init__ import (
     DEFAULT_TEMPLATE_FILES_PATH
 )
 
-
-
 #----------------------------------------------------------------
 # Main web server class
 #----------------------------------------------------------------
@@ -88,12 +86,10 @@ class ShakaShowWebApp(tornado.web.Application):
 # Entry points for app
 #----------------------------------------------------------------
 def main():
-    print("shaka_show_app.py", "Hello World!")
-
-    # TODO: Add webbrowser and URL information to WebApp.
-    webbrowser.open("http://localhost:8888")
-    httpServer = tornado.httpserver.HTTPServer(ShakaShowWebApp())
-    httpServer.listen(8888)
+    app = ShakaShowWebApp()
+    webbrowser.open('{}:{}/'.format('http://localhost', app.settings['cmdargs']['port']))
+    httpServer = tornado.httpserver.HTTPServer(app)
+    httpServer.listen(int(app.settings['cmdargs']['port']))
     tornado.ioloop.IOLoop.current().start()
 
 

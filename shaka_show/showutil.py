@@ -36,16 +36,12 @@ def parse_args():
     args = parser.parse_args()
 
     # Open source file and append each line of code to a list
-    source = open(args.file, "r")
-    sourceList = []
-    for line in source:
-            sourceList.append(line)
+    source = None
+    with open(args.file, "r") as f:
+        source = f.read()
 
     # Create a dictionary containing the 'port number,' the 'file name,' and the 'source code' of the source file
-    newDict = {'port': args.port, 'filename': args.file, 'source': sourceList }
-
-    #Close the source file
-    source.close()
+    newDict = {'port': args.port, 'filename': args.file, 'source': source }
 
     #return the dictionary value
     return newDict
