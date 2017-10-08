@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
 
-    <!-- Library / Framework CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+    <!-- Semantic UI -->
+    <link rel="stylesheet" type="text/css" href="{{ static_url('semantic/dist/semantic.min.css') }}">
+    <script src="{{ static_url('dep/jquery-3.2.1/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ static_url('semantic/dist/semantic.min.js') }}"></script>
 
     <title>Shaka Show</title>
-<head>
+</head>
 <body>
 
     {% block page_header %}
@@ -26,10 +26,6 @@
         {% module Template(panel, **panelargs[panel]) %}
     {% end %}
 
-    <!--
-    <div class="ui fluid container">
-        <div id="codetracker_container"></div>
-    </div>
-    -->
+    <script type="text/javascript" src="{{ static_url('bundle.js') }}"></script>
 </body>
 </html>

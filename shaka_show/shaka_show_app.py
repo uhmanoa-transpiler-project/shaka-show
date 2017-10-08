@@ -27,9 +27,10 @@ from __init__ import (
     DEFAULT_TEMPLATE_FILES_PATH
 )
 
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
 # Main web server class
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
+
 
 class ShakaShowWebApp(tornado.web.Application):
     def __init__(self):
@@ -41,12 +42,10 @@ class ShakaShowWebApp(tornado.web.Application):
         handlers = self.init_handlers(settings)
         super(ShakaShowWebApp, self).__init__(handlers, **settings)
 
-
     def init_settings(self):
 
         # Get arguments from cmdline
         cmdargs = parse_args()
-
 
         settings = dict(
             # Template settings
@@ -66,7 +65,6 @@ class ShakaShowWebApp(tornado.web.Application):
         )
         return settings
 
-
     def init_handlers(self, settings):
         """Return a list of tuples representing URL / Handler pairs.
         Each handler is loaded using the "load_handler(name)" function.
@@ -81,10 +79,11 @@ class ShakaShowWebApp(tornado.web.Application):
         return handlers
 
 
-
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
 # Entry points for app
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
+
+
 def main():
     app = ShakaShowWebApp()
     webbrowser.open('{}:{}/'.format('http://localhost', app.settings['cmdargs']['port']))
