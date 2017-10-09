@@ -13,7 +13,7 @@ class MainHandler(web.RequestHandler):
     def get(self):
 
         # The panels to include
-        panels = [] #['codetracker.html']
+        panels = ['codetracker.html']
 
         panelargs = {}
 
