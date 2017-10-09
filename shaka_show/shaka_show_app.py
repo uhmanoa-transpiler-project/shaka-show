@@ -27,11 +27,10 @@ from __init__ import (
     DEFAULT_TEMPLATE_FILES_PATH
 )
 
-
-
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
 # Main web server class
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
+
 
 class ShakaShowWebApp(tornado.web.Application):
     def __init__(self):
@@ -43,12 +42,10 @@ class ShakaShowWebApp(tornado.web.Application):
         handlers = self.init_handlers(settings)
         super(ShakaShowWebApp, self).__init__(handlers, **settings)
 
-
     def init_settings(self):
 
         # Get arguments from cmdline
         cmdargs = parse_args()
-
 
         settings = dict(
             # Template settings
@@ -68,7 +65,6 @@ class ShakaShowWebApp(tornado.web.Application):
         )
         return settings
 
-
     def init_handlers(self, settings):
         """Return a list of tuples representing URL / Handler pairs.
         Each handler is loaded using the "load_handler(name)" function.
@@ -83,17 +79,16 @@ class ShakaShowWebApp(tornado.web.Application):
         return handlers
 
 
-
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
 # Entry points for app
-#----------------------------------------------------------------
-def main():
-    print("shaka_show_app.py", "Hello World!")
+# ----------------------------------------------------------------
 
-    # TODO: Add webbrowser and URL information to WebApp.
-    webbrowser.open("http://localhost:8888")
-    httpServer = tornado.httpserver.HTTPServer(ShakaShowWebApp())
-    httpServer.listen(8888)
+
+def main():
+    app = ShakaShowWebApp()
+    webbrowser.open('{}:{}/'.format('http://localhost', app.settings['cmdargs']['port']))
+    httpServer = tornado.httpserver.HTTPServer(app)
+    httpServer.listen(int(app.settings['cmdargs']['port']))
     tornado.ioloop.IOLoop.current().start()
 
 

@@ -1,0 +1,31 @@
+{
+  "name": "shaka-show-deps",
+  "private": true,
+  "author": "Shaka-Show Developers",
+  "version": "1.0.0",
+  "description": "Shaka-Show npm dependencies",
+  "homepage": "https://github.com/uhmanoa-transpiler-project/shaka-show#readme",
+  "bugs": {
+    "url": "https://github.com/uhmanoa-transpiler-project/shaka-show/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uhmanoa-transpiler-project/shaka-show.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "codemirror": "^5.30.0",
+    "jquery": "^3.2.1",
+    "less": "^2.7.2",
+    "semantic-ui": "^2.2.13",
+    "underscore": "^1.8.3"
+  }
+}
