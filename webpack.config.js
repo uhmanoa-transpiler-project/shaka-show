@@ -5,4 +5,5 @@ module.exports = {
         path:  __dirname + "/shaka_show/static/dist",
         filename: "bundle.js"
     },
+    watch: true
 };
