@@ -1,7 +1,7 @@
 console.log('test.js');
 
 define([
-    'underscore'
+  'underscore'
 ], function(_) {
-    console.log(_.identity(1));
+  console.log(_.identity(1));
 });

@@ -1,7 +1,7 @@
 import { codeMirror } from './codemirror';
 
 define([
-    'jquery'
+  'jquery'
 ], function($) {
 
   // Get the source code once the page has loaded
