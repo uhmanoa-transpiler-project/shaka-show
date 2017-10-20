@@ -40,6 +40,7 @@ class ShakaShowWebApp(tornado.web.Application):
         """
         settings = self.init_settings()
         handlers = self.init_handlers(settings)
+        callback = self.init_callbacks(settings)
         super(ShakaShowWebApp, self).__init__(handlers, **settings)
 
     @staticmethod
