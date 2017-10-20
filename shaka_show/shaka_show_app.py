@@ -20,12 +20,16 @@ import tornado.web
 
 # Shaka-Show imports
 from showutil import load_handlers, parse_args
+from base import zmqhandlers
 from base.handlers import Error404Handler
 
 from __init__ import (
     DEFAULT_STATIC_FILES_PATH,
     DEFAULT_TEMPLATE_FILES_PATH
 )
+
+from zmq.eventloop import ioloop
+ioloop.install()
 
 # ----------------------------------------------------------------
 # Main web server class
@@ -40,7 +44,8 @@ class ShakaShowWebApp(tornado.web.Application):
         """
         settings = self.init_settings()
         handlers = self.init_handlers(settings)
-        super(ShakaShowWebApp, self).__init__(handlers, **settings)
+        socks = self.init_sockets(settings)
+        super(ShakaShowWebApp, self).__init__(handlers, socks, **settings)
 
     @staticmethod
     def init_settings():
@@ -82,6 +87,10 @@ class ShakaShowWebApp(tornado.web.Application):
         handlers.append((r'(.*)', Error404Handler))
         return handlers
 
+    @staticmethod
+    def init_sockets(settings):
+        zmqhandlers.zmq_sub(5558)
+        zmqhandlers.zmq_sub(5559)
 
 # ----------------------------------------------------------------
 # Entry points for app
@@ -97,7 +106,6 @@ def main():
     httpserver = tornado.httpserver.HTTPServer(app)
     httpserver.listen(int(app.settings['cmdargs']['port']))
     tornado.ioloop.IOLoop.current().start()
-
 
 if __name__ == '__main__':
     print("shaka_show_app.py", "launching main")
