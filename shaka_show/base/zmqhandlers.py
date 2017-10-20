@@ -13,7 +13,7 @@ from zmq.eventloop import zmqstream
 
 def getcommand(msg):
     command = msg[0].decode('UTF-8')
-    print("Received control command: %s" % command)
+    print("Received Command: %s" % command)
 
 def zmq_sub(port_sub = "8080"):
     context = zmq.Context()

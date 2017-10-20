@@ -97,6 +97,8 @@ def main():
     httpserver = tornado.httpserver.HTTPServer(app)
     httpserver.listen(int(app.settings['cmdargs']['port']))
     zmqhandlers.zmq_sub(5558)
+    zmqhandlers.zmq_sub(5559)
+    zmqhandlers.zmq_sub(5560)
     tornado.ioloop.IOLoop.current().start()
 
 
