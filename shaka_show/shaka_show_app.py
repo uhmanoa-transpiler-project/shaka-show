@@ -44,8 +44,8 @@ class ShakaShowWebApp(tornado.web.Application):
         """
         settings = self.init_settings()
         handlers = self.init_handlers(settings)
-#        callback = self.init_callbacks(settings)
-        super(ShakaShowWebApp, self).__init__(handlers, **settings)
+        socks = self.init_sockets(settings)
+        super(ShakaShowWebApp, self).__init__(handlers, socks, **settings)
 
     @staticmethod
     def init_settings():
@@ -85,6 +85,12 @@ class ShakaShowWebApp(tornado.web.Application):
         handlers.extend(load_handlers('base.handlers'))
         return handlers
 
+    @staticmethod
+    def init_sockets(settings):
+        socks = []
+        socks.append(zmqhandlers.zmq_sub(5558))
+        socks.append(zmqhandlers.zmq_sub(5559))
+        return socks
 
 # ----------------------------------------------------------------
 # Entry points for app
@@ -96,7 +102,6 @@ def main():
     webbrowser.open('{}:{}/'.format('http://localhost', app.settings['cmdargs']['port']))
     httpserver = tornado.httpserver.HTTPServer(app)
     httpserver.listen(int(app.settings['cmdargs']['port']))
-    zmqhandlers.zmq_sub(5558)
     tornado.ioloop.IOLoop.current().start()
 
 
