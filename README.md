@@ -3,7 +3,7 @@ A web based debugger for the Shaka-Scheme Interpreter
 
 # Development
 
-To enable watches for all JS and for semanic UI files, do the folloing:
+To enable watches for all JS and for semanic UI files, do the following:
 
 1. Open a terminal, go to project root.
 2. type `webpack`.
