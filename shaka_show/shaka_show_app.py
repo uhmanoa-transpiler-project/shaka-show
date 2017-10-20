@@ -87,10 +87,8 @@ class ShakaShowWebApp(tornado.web.Application):
 
     @staticmethod
     def init_sockets(settings):
-        socks = []
-        socks.append(zmqhandlers.zmq_sub(5558))
-        socks.append(zmqhandlers.zmq_sub(5559))
-        return socks
+        zmqhandlers.zmq_sub(5558)
+        zmqhandlers.zmq_sub(5559)
 
 # ----------------------------------------------------------------
 # Entry points for app
@@ -103,7 +101,6 @@ def main():
     httpserver = tornado.httpserver.HTTPServer(app)
     httpserver.listen(int(app.settings['cmdargs']['port']))
     tornado.ioloop.IOLoop.current().start()
-
 
 if __name__ == '__main__':
     print("shaka_show_app.py", "launching main")
