@@ -13,6 +13,15 @@ Expected DD: 2
 Actual DD:
 
 Troy explained how to VM currently works. He also took me through a small tour of the current Shaka-Scheme design. A decent portion of the work is very similar to last semester, so I have prior familiarity with the structure / design.
+At the core, there are lists. Lists I believe are DataPairs, where the car is the first element of the list and the cdr is the rest.
+DataPairs hold data. Data pairs are used in lists.
+Data can hold the following:
+String, Symbol, Boolean, DataPair, Number, Environment(?).
+
+Environment:
+The environment is pretty much a linked list of environments, where the current is the most local, and moving up parent environments eventually gets you to the global environment.
+Environments are tables where a value is mapped to a key. In this case, the keys are symbols and the values are NodePtrs. I can navigate up through an environment, check if a key has a value in any environment, check if a key is in current environment, get and set values, and get keys.
+
 
 
 ### Render filename and Sourcecode of file to codetracker.html
