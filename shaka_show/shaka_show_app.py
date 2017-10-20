@@ -21,11 +21,15 @@ import tornado.web
 
 # Shaka-Show imports
 from showutil import load_handlers, parse_args
+from base import zmqhandlers
 
 from __init__ import (
     DEFAULT_STATIC_FILES_PATH,
     DEFAULT_TEMPLATE_FILES_PATH
 )
+
+from zmq.eventloop import ioloop
+ioloop.install()
 
 # ----------------------------------------------------------------
 # Main web server class
@@ -40,7 +44,7 @@ class ShakaShowWebApp(tornado.web.Application):
         """
         settings = self.init_settings()
         handlers = self.init_handlers(settings)
-        callback = self.init_callbacks(settings)
+#        callback = self.init_callbacks(settings)
         super(ShakaShowWebApp, self).__init__(handlers, **settings)
 
     @staticmethod
@@ -92,6 +96,7 @@ def main():
     webbrowser.open('{}:{}/'.format('http://localhost', app.settings['cmdargs']['port']))
     httpserver = tornado.httpserver.HTTPServer(app)
     httpserver.listen(int(app.settings['cmdargs']['port']))
+    zmqhandlers.zmq_sub(5558)
     tornado.ioloop.IOLoop.current().start()
 
 
