@@ -13,7 +13,7 @@ class MainHandler(web.RequestHandler):
     def get(self):
 
         # The panels to include
-        panels = ['codetracker.html']
+        panels = ['header.html', 'codetracker.html']
 
         panelargs = {}
 
@@ -22,6 +22,8 @@ class MainHandler(web.RequestHandler):
             filename=self.settings['cmdargs']['filename'],
             sourcecode=self.settings['cmdargs']['source']
         )
+
+        panelargs['header.html'] = dict()
         panelargs['codetracker.html'] = codetracker_args
 
         self.render('page.html', panels=panels, panelargs=panelargs)
