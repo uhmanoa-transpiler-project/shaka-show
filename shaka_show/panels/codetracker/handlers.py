@@ -11,7 +11,7 @@ class SourcecodeHandler(web.RequestHandler):
     when it sends a get request to /ajax/sourcetracker/sourcecode.
     """
     def get(self):
-        self.write('hello!')
+        self.write(self.settings['cmdargs']['source'])
 
 
 default_handlers = [

@@ -8,9 +8,10 @@ define([
   $.ajax({
     url: '/ajax/codetracker/sourcecode',
     type: 'GET',
-    success: function(jsonResponse) {
+    success: function(sourcecode) {
       console.log('SUCCESS');
-      console.log(jsonResponse);
+      console.log(sourcecode);
+      codeMirror.setValue(sourcecode);
     },
     error: function() {
       console.log('codetracker: JSON ERROR');
