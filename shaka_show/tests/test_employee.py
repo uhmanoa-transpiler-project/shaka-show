@@ -1,6 +1,7 @@
 import unittest
 from employee import Employee
 
+
 class TestEmployee(unittest.TestCase):
 
     """
@@ -13,13 +14,11 @@ class TestEmployee(unittest.TestCase):
         self.employee1 = Employee('Penny', 'Worthshire', 20.00)
         self.employee2 = Employee('Alfred', 'Jackson', 18.50)
 
-
     """
     tearDown is code that is run every time after a test ends.
     """
     def tearDown(self):
         pass
-
 
     """
     Beginning of tests
@@ -50,8 +49,8 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.employee2.email(), 'alfred.jackson@company.com')
 
     def test_next_check(self):
-        self.assertEqual(self.employee1.nextCheck(), 3200)
-        self.assertEqual(self.employee2.nextCheck(), 2960)
+        self.assertEqual(self.employee1.next_check(), 3200)
+        self.assertEqual(self.employee2.next_check(), 2960)
 
     def test_fullname(self):
         self.assertEqual(self.employee1.fullname(), 'Penny Worthshire')

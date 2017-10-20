@@ -19,13 +19,12 @@ class MainHandler(web.RequestHandler):
 
         # codetracker settings
         codetracker_args = dict(
-            filename = self.settings['cmdargs']['filename'],
-            sourcecode = self.settings['cmdargs']['source']
+            filename=self.settings['cmdargs']['filename'],
+            sourcecode=self.settings['cmdargs']['source']
         )
         panelargs['codetracker.html'] = codetracker_args
 
-        self.render('page.html', panels = panels, panelargs = panelargs)
-
+        self.render('page.html', panels=panels, panelargs=panelargs)
 
 
 class Error404Handler(web.RequestHandler):

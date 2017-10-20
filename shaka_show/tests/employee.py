@@ -12,7 +12,7 @@ class Employee:
     def email(self):
         return '{}.{}@company.com'.format(self.first.lower(), self.last.lower())
 
-    def nextCheck(self):
+    def next_check(self):
         return self.pay * 40 * 4
 
     def fullname(self):

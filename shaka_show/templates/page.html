@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
 
-    <!-- Semantic UI -->
-    <link rel="stylesheet" type="text/css" href="{{ static_url('semantic/dist/semantic.min.css') }}">
-    <script src="{{ static_url('dep/jquery-3.2.1/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ static_url('semantic/dist/semantic.min.js') }}"></script>
+  <!-- Semantic UI -->
+  <link rel="stylesheet" type="text/css" href="{{ static_url('semantic/dist/semantic.min.css') }}">
+  <script src="{{ static_url('dep/jquery-3.2.1/jquery-3.2.1.min.js') }}"></script>
+  <script src="{{ static_url('semantic/dist/semantic.min.js') }}"></script>
 
-    <title>Shaka Show</title>
+  <title>Shaka Show</title>
 </head>
 <body>
 
-    {% block page_header %}
-    <div class="ui borderless top menu">
-        <h1 class="ui header item">Shaka-Show</h1>
-        <a class="item">File</a>
-        <a class="item">Edit</a>
-        <a class="item">View</a>
-        <a class="item">Help</a>
-    </div>
-    {% end %}
+{% block page_header %}
+<div class="ui borderless top menu">
+  <h1 class="ui header item">Shaka-Show</h1>
+  <a class="item">File</a>
+  <a class="item">Edit</a>
+  <a class="item">View</a>
+  <a class="item">Help</a>
+</div>
+{% end %}
 
-    {% for panel in panels %}
-        {% module Template(panel, **panelargs[panel]) %}
-    {% end %}
+{% for panel in panels %}
+{% module Template(panel, **panelargs[panel]) %}
+{% end %}
 
-    <script type="text/javascript" src="{{ static_url('dist/bundle.js') }}"></script>
+<script type="text/javascript" src="{{ static_url('dist/bundle.js') }}"></script>
 </body>
 </html>

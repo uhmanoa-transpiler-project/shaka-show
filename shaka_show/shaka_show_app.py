@@ -42,30 +42,32 @@ class ShakaShowWebApp(tornado.web.Application):
         handlers = self.init_handlers(settings)
         super(ShakaShowWebApp, self).__init__(handlers, **settings)
 
-    def init_settings(self):
+    @staticmethod
+    def init_settings():
 
         # Get arguments from cmdline
         cmdargs = parse_args()
 
         settings = dict(
             # Template settings
-            template_path = DEFAULT_TEMPLATE_FILES_PATH,
-            static_path = DEFAULT_STATIC_FILES_PATH,
+            template_path=DEFAULT_TEMPLATE_FILES_PATH,
+            static_path=DEFAULT_STATIC_FILES_PATH,
 
             #
-            cmdargs = cmdargs,
+            cmdargs=cmdargs,
 
             # Tornado settings
-            autoreload = True,
-            serve_traceback = True,
-            compress_response = True,
-            websocket_ping_interval = 10,
-            websocket_ping_timeout = 60,
-            xsrf_cookies = True
+            autoreload=True,
+            serve_traceback=True,
+            compress_response=True,
+            websocket_ping_interval=10,
+            websocket_ping_timeout=60,
+            xsrf_cookies=True
         )
         return settings
 
-    def init_handlers(self, settings):
+    @staticmethod
+    def init_handlers(settings):
         """Return a list of tuples representing URL / Handler pairs.
         Each handler is loaded using the "load_handler(name)" function.
         The name passed in is the path to the handers.py module for each
@@ -87,8 +89,8 @@ class ShakaShowWebApp(tornado.web.Application):
 def main():
     app = ShakaShowWebApp()
     webbrowser.open('{}:{}/'.format('http://localhost', app.settings['cmdargs']['port']))
-    httpServer = tornado.httpserver.HTTPServer(app)
-    httpServer.listen(int(app.settings['cmdargs']['port']))
+    httpserver = tornado.httpserver.HTTPServer(app)
+    httpserver.listen(int(app.settings['cmdargs']['port']))
     tornado.ioloop.IOLoop.current().start()
 
 
