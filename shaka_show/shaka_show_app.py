@@ -11,7 +11,6 @@ from __future__ import absolute_import
 
 # System imports
 import webbrowser
-import importlib
 
 # Tornado imports
 import tornado.httpserver
@@ -21,6 +20,7 @@ import tornado.web
 
 # Shaka-Show imports
 from showutil import load_handlers, parse_args
+from base.handlers import Error404Handler
 
 from __init__ import (
     DEFAULT_STATIC_FILES_PATH,
@@ -78,6 +78,8 @@ class ShakaShowWebApp(tornado.web.Application):
         """
         handlers = []
         handlers.extend(load_handlers('base.handlers'))
+        handlers.extend(load_handlers('panels.codetracker.handlers'))
+        handlers.append((r'(.*)', Error404Handler))
         return handlers
 
 
@@ -88,7 +90,10 @@ class ShakaShowWebApp(tornado.web.Application):
 
 def main():
     app = ShakaShowWebApp()
-    webbrowser.open('{}:{}/'.format('http://localhost', app.settings['cmdargs']['port']))
+    webbrowser.open('{}:{}/'.format(
+        'http://localhost',
+        app.settings['cmdargs']['port'])
+    )
     httpserver = tornado.httpserver.HTTPServer(app)
     httpserver.listen(int(app.settings['cmdargs']['port']))
     tornado.ioloop.IOLoop.current().start()

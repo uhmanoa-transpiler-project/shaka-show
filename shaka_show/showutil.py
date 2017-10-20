@@ -9,7 +9,7 @@ import importlib
 def load_handlers(name):
     """Return a tuple containing the URL and the URL's handler.
     Each handler should be contained in a file called handlers.py.
-    These modules contain each handler and are retrrieved with "default_handlers".
+    These modules contain each handler and are retrieved with "default_handlers".
     """
     handler_module = importlib.import_module(name)
     return handler_module.default_handlers

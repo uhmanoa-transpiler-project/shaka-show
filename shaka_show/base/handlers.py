@@ -34,6 +34,5 @@ class Error404Handler(web.RequestHandler):
 
 
 default_handlers = [
-    (r'/', MainHandler),
-    (r'(.*)', Error404Handler)
+    (r'/', MainHandler)
 ]
