@@ -6,6 +6,15 @@ This document is used to retain text relating to every task that is completed as
 
 ## Tasks
 
+### Understand environment and how data is stored
+
+Date: 10/20/2017
+Expected DD: 2
+Actual DD:
+
+Troy explained how to VM currently works. He also took me through a small tour of the current Shaka-Scheme design. A decent portion of the work is very similar to last semester, so I have prior familiarity with the structure / design.
+
+
 ### Render filename and Sourcecode of file to codetracker.html
 
 Date: 9/24/2017
