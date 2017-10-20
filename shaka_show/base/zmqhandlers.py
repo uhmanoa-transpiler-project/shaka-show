@@ -8,22 +8,12 @@ from tornado import web
 
 #Subscriber: Whenever a message is heard, print message
 
-from zmq.eventloop import ioloop, zmqstream
-ioloop.install()
-
-SocketList = []
+from zmq.eventloop import zmqstream
 
 
 def getcommand(msg):
     command = msg[0].decode('UTF-8')
     print("Received control command: %s" % command)
-    if command == "Exit":
-        print("Received exit command, client will stop receiving messages")
-        ioloop.IOLoop.instance().stop()
-
-    else:
-        SocketList.append(command)
-
 
 def zmq_sub(port_sub = "8080"):
     context = zmq.Context()
@@ -33,6 +23,4 @@ def zmq_sub(port_sub = "8080"):
     stream_sub = zmqstream.ZMQStream(socket_sub)
     stream_sub.on_recv(getcommand)
     print("Connected to publisher with port %s" % port_sub)
-    ioloop.IOLoop.instance().start()
-    print("Worker has stopped processing messages.")
-    return SocketList
+
