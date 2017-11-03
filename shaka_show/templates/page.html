@@ -22,9 +22,14 @@
 <div class="ui fluid container">
 
 
-  {% for panel in panels %}
-  {% module Template(panel, **panelargs[panel]) %}
-  {% end %}
+      <div class="ui borderless top menu header container">
+        <h3>Shaka-Show</h3>
+      </div>
+
+      {% for panel in panels %}
+      {% module Template(panel, **panelargs[panel]) %}
+      {% end %}
+
 
 </div>
 <script type="text/javascript" src="{{ static_url('dist/bundle.js') }}"></script>
