@@ -1,7 +1,8 @@
-console.log('entry index.js');
+console.log('entered index.js');
 
 /*
  * List all js files to be run at initialization
  */
 
-require("./panels/sourcetracker/js/index.js");
+require('./panels/controls/js/index.js');
+require('./panels/sourcetracker/js/index.js');

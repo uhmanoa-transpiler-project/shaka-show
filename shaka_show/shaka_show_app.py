@@ -62,6 +62,7 @@ class ShakaShowWebApp(tornado.web.Application):
             cmdargs=cmdargs,
 
             # Tornado settings
+            debug=True,
             autoreload=True,
             serve_traceback=True,
             compress_response=True,
@@ -83,6 +84,7 @@ class ShakaShowWebApp(tornado.web.Application):
         """
         handlers = []
         handlers.extend(load_handlers('base.handlers'))
+        handlers.extend(load_handlers('panels.controls.handlers'))
         handlers.extend(load_handlers('panels.codetracker.handlers'))
         handlers.append((r'(.*)', Error404Handler))
         return handlers

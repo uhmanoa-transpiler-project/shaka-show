@@ -1,4 +1,4 @@
-console.log('test.js');
+console.log('entered sourcetracker/test.js');
 
 define([
   'underscore'
