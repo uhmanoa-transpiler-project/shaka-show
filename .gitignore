@@ -217,3 +217,7 @@ typings/
 
 # Semantic UI
 dist/
+
+
+# Special folders to include
+!lib/
