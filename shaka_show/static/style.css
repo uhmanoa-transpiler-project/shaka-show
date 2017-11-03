@@ -1,6 +1,11 @@
-
 body {
-  height: 6000px;
+  background-color: black;
+  color: cyan;
+}
+
+#foreground{
+  background-color: black;
+  color: cyan;
 }
 
 .ui.borderless.top.menu.header {
@@ -23,11 +28,9 @@ body {
 
 .ui.labeled.icon.button {
   font-size: 8px;
-  padding: 0px;
-
 }
 
-a .right.item {
+a {
   padding: 0px;
 }
 
