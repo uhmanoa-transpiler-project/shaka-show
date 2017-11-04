@@ -1,10 +1,10 @@
 body {
-  background-color: black;
-  color: cyan;
+  background-color: #282a36;
+  color: #f8f8f2; /*foreground*/
 }
 
-#foreground{
-  background-color: black;
+#topmenu {
+  background-color: #44475a; /*current line*/
   color: cyan;
 }
 
@@ -20,6 +20,7 @@ body {
   margin-bottom: 14px;
   font-size: 11px;
   padding: 0px;
+  color: #ee1836;
 }
 
 .eight.wide.main.column {
@@ -28,9 +29,15 @@ body {
 
 .ui.labeled.icon.button {
   font-size: 8px;
+  background-color: #282a36	; /*background */
+  color: #77ee77;
 }
 
-a {
-  padding: 0px;
+#stop-button {
+  color: #ee1836;
+}
+
+.ui.menu .item{
+  color: #77ee77;
 }
 
