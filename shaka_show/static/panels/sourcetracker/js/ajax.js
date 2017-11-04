@@ -27,6 +27,11 @@ define([
       const template = document.querySelector('#codetracker-file-tab-template');
       const text_div = template.content.querySelectorAll('div');
       text_div[0].textContent = default_filename;
+
+      const menu = document.querySelector('#codetracker-file-menu');
+      const clone = document.importNode(template.content, true);
+      menu.appendChild(clone);
+
       codeMirror.setValue(default_source);
     },
     error() {
