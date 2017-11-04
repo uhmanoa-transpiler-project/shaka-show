@@ -8,6 +8,10 @@ body {
   color: cyan;
 }
 
+.ui.header {
+  color: cyan;
+}
+
 .ui.borderless.top.menu.header {
   margin-bottom: 0px;
   padding-top: 5px;
@@ -51,7 +55,7 @@ body {
   color: #e6ee2e;
 }
 
-.ui.menu .item{
+.ui.menu .item {
   color: #77ee77;
 }
 
