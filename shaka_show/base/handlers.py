@@ -12,18 +12,23 @@ class MainHandler(web.RequestHandler):
     """
     def get(self):
 
+        # Check for xsrf cookie
+        if not self.get_cookie('_xsrf'):
+            self.set_cookie('_xsrf', self.xsrf_token)
+
         # The panels to include
         panels = ['controls.html', 'codetracker.html']
-
         panelargs = {}
 
+        # controls settings
+        controls_args = {}
         # codetracker settings
         codetracker_args = dict(
             filename=self.settings['cmdargs']['filename'],
             sourcecode=self.settings['cmdargs']['source']
         )
 
-        panelargs['controls.html'] = {}
+        panelargs['controls.html'] = controls_args
         panelargs['codetracker.html'] = codetracker_args
 
         self.render('page.html', panels=panels, panelargs=panelargs)
