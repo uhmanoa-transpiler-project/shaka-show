@@ -3,6 +3,10 @@ body {
   color: cyan;
 }
 
+.ui.menu {
+  margin: 0px;
+}
+
 #foreground{
   background-color: black;
   color: cyan;
@@ -28,9 +32,5 @@ body {
 
 .ui.labeled.icon.button {
   font-size: 8px;
-}
-
-a {
-  padding: 0px;
 }
 

@@ -41,7 +41,12 @@ def parse_args():
         source = f.read()
 
     # Create a dictionary containing the 'port number,' the 'file name,' and the 'source code' of the source file
-    newdict = {'port': args.port, 'filename': args.file, 'source': source}
+    parsed_args = {
+        'port': args.port,
+        'source_files': [
+            {'filename': args.file, 'source': source}
+        ]
+    }
 
     # return the dictionary value
-    return newdict
+    return parsed_args

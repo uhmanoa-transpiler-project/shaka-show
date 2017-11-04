@@ -1,4 +1,14 @@
 <div class="ui fluid container">
-  <h3 class="ui header">{{ filename }}</h3>
+  <!-- Menu to hold file name -->
+  <div class="ui mini pointing menu" id="codetracker-file-menu">
+  </div>
+  <!-- Div that the CodeMirror object is inserted into -->
   <div id="shaka-codemirror"></div>
 </div>
+
+<template id="codetracker-file-tab-template">
+  <a class="vertically fitted item">
+    <i class="ui file icon"></i>
+    <div class="text filename"></div>
+  </a>
+</template>
