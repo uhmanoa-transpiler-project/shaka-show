@@ -1,15 +1,14 @@
 body {
   background-color: #282a36;
-  color: #f8f8f2; /*foreground*/
 }
 
 #topmenu {
   background-color: #44475a; /*current line*/
-  color: cyan;
+  color: #f8f8f2; /*foreground*/
 }
 
-.ui.header {
-  color: cyan;
+.shaka-header {
+  color: #f8f8f2; /*foreground*/
 }
 
 .ui.borderless.top.menu.header {
@@ -24,38 +23,33 @@ body {
   margin-bottom: 14px;
   font-size: 11px;
   padding: 0px;
-  color: #ee1836;
-}
-
-.eight.wide.main.column {
-  height: 3000px;
 }
 
 .ui.labeled.icon.play.button {
   font-size: 10px;
   background-color: #282a36	; /*background */
-  color: #77ee77;
+  color: mediumspringgreen;
 }
 
 .ui.labeled.icon.stop.button {
   font-size: 10px;
   background-color: #282a36	; /*background */
-  color: #ee1836;
+  color: red;
 }
 
 .ui.labeled.icon.pause.button {
   font-size: 10px;
   background-color: #282a36	; /*background */
-  color: #28beee;
+  color: deepskyblue;
 }
 
 .ui.labeled.icon.step.button {
   font-size: 10px;
   background-color: #282a36	; /*background */
-  color: #e6ee2e;
+  color: yellow;
 }
 
 .ui.menu .item {
-  color: #77ee77;
+  color: #e0e0da; /* foreground */
 }
 
