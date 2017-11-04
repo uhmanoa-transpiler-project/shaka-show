@@ -3,6 +3,7 @@ Handlers for all ajax communication with sourcetracker panel.
 """
 
 from tornado import web
+import json
 
 
 class SourcecodeHandler(web.RequestHandler):
@@ -11,7 +12,8 @@ class SourcecodeHandler(web.RequestHandler):
     when it sends a get request to /ajax/sourcetracker/sourcecode.
     """
     def get(self):
-        self.write(self.settings['cmdargs']['source'])
+        source_files = self.settings['cmdargs']['source_files']
+        self.write(json.dumps(source_files, separators=(',', ':')))
 
 
 default_handlers = [
