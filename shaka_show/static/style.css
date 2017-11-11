@@ -11,6 +11,10 @@ body {
   color: #f8f8f2; /*foreground*/
 }
 
+.text.filename {
+  color: #282a36; /* background color */
+}
+
 .ui.borderless.top.menu.header {
   margin-bottom: 0px;
   padding-top: 5px;
@@ -18,38 +22,50 @@ body {
   font-size: 10px;
 }
 
-.ui.borderless.top.menu.controls {
+.shaka-controls {
   margin-top: 0px;
   margin-bottom: 14px;
   font-size: 11px;
   padding: 0px;
 }
 
-.ui.labeled.icon.play.button {
+.ui.labeled.inverted.icon.button {
   font-size: 10px;
   background-color: #282a36	; /*background */
+}
+/*
+.shaka-play {
+  color: mediumspringgreen;
+}
+
+.inverted.shaka-play {
   color: mediumspringgreen;
 }
 
 .ui.labeled.icon.stop.button {
   font-size: 10px;
-  background-color: #282a36	; /*background */
+  background-color: #282a36	;
   color: red;
 }
 
 .ui.labeled.icon.pause.button {
   font-size: 10px;
-  background-color: #282a36	; /*background */
+  background-color: #282a36	;
   color: deepskyblue;
 }
 
 .ui.labeled.icon.step.button {
   font-size: 10px;
-  background-color: #282a36	; /*background */
+  background-color: #282a36	;
   color: yellow;
 }
+*/
 
 .ui.menu .item {
   color: #e0e0da; /* foreground */
 }
 
+
+.ui.inverted.yellow.button:hover, .ui.inverted.yellow.buttons .button:hover {
+  color: white; /* foreground */
+}
