@@ -13,16 +13,19 @@
   <script src="{{ static_url('deps/codemirror/lib/codemirror.js') }}"></script>
   <link rel="stylesheet" type="text/css" href="{{ static_url('deps/codemirror/lib/codemirror.css') }}">
   <script src="{{ static_url('deps/codemirror/mode/scheme/scheme.js') }}"></script>
+  <script src="{{ static_url('deps/codemirror/mode/javascript/javascript.js') }}"></script>
 
   <link rel="stylesheet" href="{{ static_url('style.css') }}">
+  <link rel="stylesheet" href="{{ static_url('themes/dracula.css') }}" id="theme">
+  <link rel="stylesheet" href="{{ static_url('deps/codemirror/theme/dracula.css') }}" id="editor-theme">
 
   <title>Shaka Show</title>
 </head>
-<body>
+<body class="shaka-background">
 <div class="ui fluid container">
 
 
-      <div id="topmenu" class="ui borderless top menu header container shaka-header">
+      <div class="ui borderless top menu header container shaka-top-header">
         <h3>Shaka-Show</h3>
       </div>
 
