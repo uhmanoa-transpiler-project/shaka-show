@@ -5,6 +5,7 @@ import { getXSRFCookie } from '../../../utils';
 define([
   'jquery'
 ], function($) {
+  "use strict";
 
   // API urls for runtime control buttons
   const start_url = '/ajax/controls/buttons/start';
@@ -15,7 +16,6 @@ define([
 
   // Add Shaka-Show API requests to button clicks
   $(document).ready(function() {
-
 
     // Start button
     $('#start-button').click(function(event) {
@@ -34,6 +34,7 @@ define([
           console.log('controls: start btn post failure');
         }
       });
+      return false;
     });
 
 
@@ -54,6 +55,7 @@ define([
           console.log('controls: pause btn post failure');
         }
       });
+      return false;
     });
 
 
@@ -73,6 +75,7 @@ define([
           console.log('controls: stop btn post failure');
         }
       });
+      return false;
     });
 
 
@@ -92,6 +95,7 @@ define([
           console.log('controls: step btn post failure');
         }
       });
+      return false;
     });
 
 

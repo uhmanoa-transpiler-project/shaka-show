@@ -43,9 +43,9 @@ def parse_args():
     # Create a dictionary containing the 'port number,' the 'file name,' and the 'source code' of the source file
     parsed_args = {
         'port': args.port,
-        'source_files': [
-            {'filename': args.file, 'source': source}
-        ]
+        'source_files': {
+            args.file: source
+        }
     }
 
     # return the dictionary value

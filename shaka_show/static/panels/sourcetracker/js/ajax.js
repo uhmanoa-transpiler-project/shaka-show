@@ -16,9 +16,8 @@ define([
     success(sources) {
       console.log('codetracker: sourcecode GET success');
 
-      const source_files_list = JSON.parse(sources);
-      _.each(source_files_list, (source_file) => {
-        source_files[source_file.filename] = source_file.source;
+      _.each(JSON.parse(sources), (code, name) => {
+        source_files[name] = code;
       });
 
       const default_filename = Object.keys(source_files)[0];
