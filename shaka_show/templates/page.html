@@ -22,17 +22,19 @@
   <title>Shaka Show</title>
 </head>
 <body class="shaka-background">
-<div class="ui fluid container">
+<div class="ui fluid container parent">
 
 
-      <div class="ui borderless top menu header container shaka-top-header">
+      <div class="ui borderless top menu header container shaka-panel-header-top">
         <h3>Shaka-Show</h3>
       </div>
+      {% include controls.html %}
 
+      <div class="ui fluid container shaka-body">
       {% for panel in panels %}
       {% module Template(panel, **panelargs[panel]) %}
       {% end %}
-
+      </div>
 
 </div>
 <script type="text/javascript" src="{{ static_url('dist/bundle.js') }}"></script>

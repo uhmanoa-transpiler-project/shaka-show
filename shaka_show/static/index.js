@@ -6,3 +6,4 @@ console.log('entered index.js');
 
 require('./panels/controls/js/index.js');
 require('./panels/sourcetracker/js/index.js');
+require('./panels/console/js/index.js');

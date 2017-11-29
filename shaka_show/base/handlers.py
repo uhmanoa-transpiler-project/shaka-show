@@ -17,16 +17,19 @@ class MainHandler(web.RequestHandler):
             self.set_cookie('_xsrf', self.xsrf_token)
 
         # The panels to include
-        panels = ['controls.html', 'codetracker.html']
+        panels = ['codetracker.html', 'console.html']
         panelargs = {}
 
         # controls settings
         controls_args = {}
         # codetracker settings
         codetracker_args = {}
+        # console settings
+        console_args = {}
 
-        panelargs['controls.html'] = controls_args
+
         panelargs['codetracker.html'] = codetracker_args
+        panelargs['console.html'] = console_args
 
         self.render('page.html', panels=panels, panelargs=panelargs)
 

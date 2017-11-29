@@ -3,21 +3,36 @@
   background-color: #282a36 !important;
 }
 
-.shaka-top-header {
- background-color: #1b1b1b !important;
- color: #f8f8f2 !important;
+.shaka-panel-header-top {
+  background-color: #353c52 !important;
+  color: #f8f8f2 !important;
   margin-bottom: 0px !important;
   padding-top: 5px !important;
+  padding-bottom: 5px !important;
   padding-left: 12px !important;
   font-size: 10px !important;
 }
 
-.shaka-filemenu {
+.shaka-panel-header {
   background-color: #1b1b1b !important;
+  color: #f8f8f2 !important;
+  margin-bottom: 0px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 12px !important;
+  font-size: 10px !important;
 }
 
-.shaka-filename {
-  background-color: #44475a !important; /* background color */
+.shaka-menu {
+  background-color: #1b1b1b !important;
+  margin: 0px !important;
+  border-bottom-color: #323232 !important;
+  border-top-color: #636363 !important;
+  border-top-width: thin;
+}
+
+.shaka-menu-item {
+  background-color: #454f68 !important; /* background color */
   color: #f8f8f2 !important;
 }
 
@@ -29,6 +44,18 @@
   color: #e0e0da !important; /* foreground */
 }
 
+.shaka-codemirror {
+  background-color: white;
+  height: 55vh;
+}
 
-
+.shaka-console {
+  color: darkorange;
+  background-color: #282a36 !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 12px !important;
+  overflow: scroll;
+  height: 30vh;
+}
 
