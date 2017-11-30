@@ -9,10 +9,13 @@ body {
 .shaka-body {
   height: 100%;
   width: 100%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .parent {
   height: 100vh;
 }
 
+#shaka-console {
+    overflow: hidden;
+}
