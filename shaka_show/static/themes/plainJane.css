@@ -1,0 +1,64 @@
+
+.shaka-background {
+  background-color: lightgrey !important;
+}
+
+.shaka-panel-header-top {
+  background-color: lightblue !important;
+  color: black !important;
+  margin-bottom: 0px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 12px !important;
+  font-size: 10px !important;
+}
+
+.shaka-panel-header {
+  background-color: lightpink !important;
+  color: black !important;
+  margin-bottom: 0px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 12px !important;
+  font-size: 10px !important;
+}
+
+.shaka-menu {
+  background-color: lightpink !important;
+  margin: 0px !important;
+  border-bottom-color: lightgreen !important;
+  border-top-color: darkblue !important;
+  border-top-width: thin;
+}
+
+.shaka-menu-item {
+  background-color: lightseagreen !important; /* background color */
+  color: black !important;
+}
+
+/* added a way to invert the colors for the buttons*/
+.shaka-button {
+  font-size: 10px !important;
+  -webkit-filter: invert(85%);
+  filter: invert(85%);
+}
+
+.shaka-item {
+  color: blue !important; /* foreground */
+}
+
+.shaka-codemirror {
+  background-color: black;
+  height: 55vh;
+}
+
+.shaka-console {
+  color: Green;
+  background-color: lightgrey !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-left: 12px !important;
+  overflow: scroll;
+  height: 30vh;
+}
+
